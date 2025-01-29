@@ -1,0 +1,95 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Ensures a clean, readable font */
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa; /* Light grey background for a modern look */
+    color: #333; /* Standard text color for readability */
+    text-align: center; /* Centers text globally */
+}
+
+/* Header */
+header {
+    background: #ff6f61; /* Vibrant red-orange for a welcoming look */
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+}
+
+/* Search Bar */
+.search-container {
+    margin: 20px;
+}
+
+input {
+    width: 60%; /* Makes input box large enough for easy typing */
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Rounded corners for a modern touch */
+    font-size: 16px;
+}
+
+button {
+    background: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Changes cursor to pointer when hovering */
+    font-size: 16px;
+}
+
+button:hover {
+    background: #e35d50; /* Slightly darker shade for hover effect */
+}
+
+/* Recipe Results Section */
+.recipe-results {
+    margin-top: 20px;
+}
+
+#recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Recipe Cards */
+.recipe-card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+    transition: transform 0.2s ease-in-out; /* Smooth animation for hover */
+}
+
+.recipe-card:hover {
+    transform: scale(1.05); /* Enlarges card slightly on hover */
+}
+
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 5px; /* Slightly rounded corners for a polished look */
+}
+
+.recipe-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
+
+/* Responsive Design - Mobile Optimized */
+@media (max-width: 768px) {
+    input {
+        width: 80%; /* Makes search bar wider on mobile for better usability */
+    }
+}
