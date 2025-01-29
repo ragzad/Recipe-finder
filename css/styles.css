@@ -45,22 +45,31 @@ button:hover {
 }
 
 /* Recipe Results Section */
-/* Horizontal Scroll Container */
-/* Adjust recipe card styling for vertical stacking */
+/* Default layout: Horizontal scrolling */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+/* Recipe card styling */
 .recipe-card {
-    width: 100%; /* Make cards full width */
-    max-width: 350px; /* Limit width for better readability */
+    flex: 0 0 auto;
+    width: 250px;
     background: white;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     text-align: center;
-    overflow: hidden;
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    word-wrap: break-word; /* Ensure text does not overflow */
+    word-wrap: break-word;
 }
 
 /* Ensure ingredient lists and text wrap properly */
@@ -77,7 +86,21 @@ button:hover {
     margin: 3px 0;
     padding: 2px;
     word-wrap: break-word;
-    white-space: normal; /* Allows text to wrap */
+    white-space: normal;
+}
+
+/* Responsive Design: Stack recipe cards vertically on small screens */
+@media (max-width: 768px) {
+    .scroll-container {
+        flex-direction: column; /* Stack cards vertically */
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        align-items: center; /* Center cards */
+    }
+
+    .recipe-card {
+        width: 90%; /* Make cards take most of the screen width */
+        max-width: 400px; /* Limit size for readability */
+    }
 }
 
 /* Adjust nutrition section to prevent overflow */
