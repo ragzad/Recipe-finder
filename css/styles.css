@@ -92,14 +92,20 @@ button:hover {
 /* Responsive Design: Stack recipe cards vertically on small screens */
 @media (max-width: 768px) {
     .scroll-container {
-        flex-direction: column; /* Stack cards vertically */
+        flex-direction: column; /* Stack recipe cards vertically */
         overflow-x: hidden; /* Disable horizontal scrolling */
-        align-items: center; /* Center cards */
+        align-items: center; /* Center-align recipe cards */
     }
 
     .recipe-card {
-        width: 90%; /* Make cards take most of the screen width */
+        width: 90%; /* Make recipe cards take most of the screen width */
         max-width: 400px; /* Limit size for readability */
+    }
+
+    #recipes-container {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center-align cards */
     }
 }
 
