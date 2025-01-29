@@ -46,51 +46,92 @@ button:hover {
 
 /* Recipe Results Section */
 /* Horizontal Scroll Container */
-.scroll-container {
-    display: flex;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Ensures snapping for better UX */
-    gap: 15px;
-    padding: 10px;
-    white-space: nowrap; /* Prevents items from breaking into multiple lines */
-}
-
+/* Adjust recipe card styling for vertical stacking */
 .recipe-card {
-    flex: 0 0 auto;
-    width: 250px;
+    width: 100%; /* Make cards full width */
+    max-width: 350px; /* Limit width for better readability */
     background: white;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     text-align: center;
-    scroll-snap-align: start; /* Ensures smooth scrolling */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word; /* Ensure text does not overflow */
 }
 
-.recipe-card:hover {
-    transform: scale(1.05);
+/* Ensure ingredient lists and text wrap properly */
+.recipe-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 14px;
 }
 
-.recipe-card img {
-    width: 100%;
-    border-radius: 8px;
+.recipe-card li {
+    font-size: 14px;
+    margin: 3px 0;
+    padding: 2px;
+    word-wrap: break-word;
+    white-space: normal; /* Allows text to wrap */
 }
 
-.recipe-card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
+/* Adjust nutrition section to prevent overflow */
+.nutrition-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    padding: 5px 0;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.nutrition-container p {
+    margin: 2px 0; /* Reduce spacing between macros */
+}
+
+/* Modify the container to allow vertical stacking */
+#recipes-container {
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
+    align-items: top; /* Center-align cards */
+    gap: 15px; /* Space between cards */
+}
+
+.hidden-ingredients {
+    display: none;
+}
+
+.see-more-btn {
     background: #ff6f61;
     color: white;
-    text-decoration: none;
+    padding: 5px 10px;
+    border: none;
     border-radius: 5px;
-    transition: background 0.2s;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
-.recipe-card a:hover {
+.see-more-btn:hover {
     background: #e35d50;
 }
 
+
+/* Add smooth scrolling effect */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px;
+    white-space: nowrap;
+}
 /* Footer */
 footer {
     margin-top: 20px;

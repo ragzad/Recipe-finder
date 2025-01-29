@@ -74,7 +74,7 @@ A dynamic, interactive recipe search application where users can input ingredien
 
 
 # Recipe Finder - Patch Notes  
-**Version: Latest**  
+**Version: 1.1**  
 **Date: YYYY-MM-DD**  
 
 ---
@@ -109,3 +109,62 @@ This makes it **easier to browse** through multiple options.
 - Added `"Loading recipes..."` while fetching results.  
 - If no exact matches are found, it now says `"No exact matches found. Showing closest recipes instead."`  
 - Errors are now clearer so you know what went wrong.  
+
+---
+
+# Recipe Finder - Patch Notes  
+**Version: 1.2 (Latest)**  
+**Date: 29/01/2025**  
+
+---
+
+## Fixes and Improvements  
+
+### 1. Improved Recipe Card Layout (Horizontal Scrolling)  
+- Restored **horizontal scrolling** for recipe cards while keeping ingredients vertically stacked.  
+- Adjusted **styling** to ensure a cleaner, more readable layout.  
+
+#### Problem Faced:  
+- Recipe cards were stacking **vertically**, making navigation less user-friendly.  
+
+#### How We Fixed It:  
+- Reverted to **horizontal scrolling** while ensuring **ingredients stack properly** within each card.  
+
+---
+
+### 2. Added a "See More" Button for Long Ingredient Lists  
+- Limited the **default ingredient list to 7 items**.  
+- Added a `"See More"` button when recipes contain more than 7 ingredients.  
+- Clicking the button expands the full list, preventing large recipe cards.  
+
+#### Problem Faced:  
+- Recipes with **long ingredient lists** were making some cards too large, breaking the layout.  
+
+#### How We Fixed It:  
+- Implemented a **toggle feature** that expands or collapses the ingredient list dynamically.  
+
+---
+
+### 3. Improved Ingredient Matching (Fuzzy Search)  
+- **Now detects partial ingredient matches** (e.g., `"egg"` matches `"hard boiled eggs"` or `"9 eggs"`).  
+- Allows for more **flexible searching** and avoids missing valid matches.  
+
+#### Problem Faced:  
+- **Exact text matching** was preventing valid ingredient recognition.  
+- `"egg"` and `"hard boiled eggs"` were treated as different items.  
+
+#### How We Fixed It:  
+- Updated ingredient comparison logic to use **partial string matching** with `.includes()`.  
+
+---
+
+### 4. Improved Nutrition Display  
+- **Nutrition info (calories, protein, carbs, fats) now fits correctly inside recipe cards**.  
+- Adjusted **text wrapping** to prevent overflow.  
+
+#### Problem Faced:  
+- Nutrition details were **overflowing the recipe card**, making some text unreadable.  
+
+#### How We Fixed It:  
+- Applied **CSS fixes** to properly stack macros inside each card.  
+- Ensured **text wraps instead of overflowing**.  
