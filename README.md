@@ -75,7 +75,7 @@ A dynamic, interactive recipe search application where users can input ingredien
 
 # Recipe Finder - Patch Notes  
 **Version: 1.1**  
-**Date: YYYY-MM-DD**  
+**Date: 29/01/2025**  
 
 ---
 
