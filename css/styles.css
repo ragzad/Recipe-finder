@@ -17,7 +17,7 @@ header {
 }
 
 /* Search Bar */
-.search-container {
+search-container {
     margin: 20px;
 }
 
@@ -89,26 +89,6 @@ button:hover {
     white-space: normal;
 }
 
-/* Responsive Design: Stack recipe cards vertically on small screens */
-@media (max-width: 768px) {
-    .scroll-container {
-        flex-direction: column; /* Stack recipe cards vertically */
-        overflow-x: hidden; /* Disable horizontal scrolling */
-        align-items: center; /* Center-align recipe cards */
-    }
-
-    .recipe-card {
-        width: 90%; /* Make recipe cards take most of the screen width */
-        max-width: 400px; /* Limit size for readability */
-    }
-
-    #recipes-container {
-        display: flex;
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center; /* Center-align cards */
-    }
-}
-
 /* Adjust nutrition section to prevent overflow */
 .nutrition-container {
     display: flex;
@@ -127,9 +107,29 @@ button:hover {
 /* Modify the container to allow vertical stacking */
 #recipes-container {
     display: flex;
-    flex-direction: row; /* Stack items vertically */
-    align-items: top; /* Center-align cards */
-    gap: 15px; /* Space between cards */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Responsive Design: Stack recipe cards vertically on small screens */
+@media (max-width: 768px) {
+    .scroll-container {
+        flex-direction: column; /* Stack recipe cards vertically */
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        align-items: center; /* Center-align recipe cards */
+    }
+
+    .recipe-card {
+        width: 90%; /* Make recipe cards take most of the screen width */
+        max-width: 400px; /* Limit size for readability */
+    }
+
+    #recipes-container {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center-align cards */
+    }
 }
 
 .hidden-ingredients {
@@ -151,16 +151,6 @@ button:hover {
     background: #e35d50;
 }
 
-
-/* Add smooth scrolling effect */
-.scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 15px;
-    padding: 10px;
-    white-space: nowrap;
-}
 /* Footer */
 footer {
     margin-top: 20px;
