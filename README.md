@@ -27,10 +27,6 @@ A dynamic, interactive recipe search application where users can input ingredien
    - Clear feedback for invalid inputs ("Please enter at least one ingredient").
    - Graceful handling of API errors or empty results ("No recipes found").
 
-### Additional Features (Optional for Distinction)
-- **Save Favorites**: Allow users to bookmark recipes for later.
-- **Random Recipe Suggestion**: Offer random recipes for users unsure of what to cook.
-
 ---
 
 ## Accessibility and UX Standards
