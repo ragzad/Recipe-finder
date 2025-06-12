@@ -158,3 +158,40 @@ A dynamic, interactive recipe search application where users can input ingredien
 #### How We Fixed It:  
 - Applied **CSS fixes** to properly stack macros inside each card.  
 - Ensured **text wraps instead of overflowing**.  
+
+### Test Plan
+
+The following test cases were executed to assess the Recipe Finder application's core functionality, usability, and responsiveness.
+
+#### 1. Functionality Tests
+
+| Test Case Description | Input/Action | Expected Outcome | Actual Outcome / Status |
+| :----------------------------------------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------ | :---------------------- |
+| **Successful Recipe Search** | Enter valid ingredients (e.g., "chicken, rice") | Relevant recipes displayed, matching the selected count. | Passed |
+| **"See More" Button Functionality** | Click "See More" on a recipe card | All ingredients for that recipe become visible; the "See More" button hides. | Passed |
+| **Recipe Count Selection** | Select a different recipe count (e.g., "12" or "18") | The specified number of recipes is displayed in the results. | Passed |
+| **Empty Input Handling** | Click "Search Recipes" with an empty input field | An alert message "Please enter at least one ingredient." appears. | Passed |
+| **No Exact Matches (Fallback)** | Enter unusual ingredients unlikely to have exact matches (e.g., "starfruit, quinoa") | Message "No exact matches found. Showing the closest recipes instead." appears, followed by relevant fallback recipes. | Passed |
+| **API Error Handling** | (Simulate API failure or network issue if possible) | Message "Failed to load recipes. Please try again." appears. | Passed |
+
+#### 2. Usability Tests
+
+| Test Case Description | Input/Action | Expected Outcome | Actual Outcome / Status |
+| :----------------------------------------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------ | :---------------------- |
+| **Intuitive Interface** | Navigate through the app | Search bar and filters are easily discoverable and understandable. | Passed |
+| **Clear Feedback** | Perform a search; encounter an error | Loading messages, error messages, and search results are clear and timely. | Passed |
+| **Interactive Elements** | Click buttons, type in input field | All interactive elements respond as expected (e.g., buttons change on hover). | Passed |
+| **Legibility** | View text and images across the application | All text is clearly readable; images are of usable resolution and not pixelated. | Passed |
+
+#### 3. Responsiveness Tests
+
+| Test Case Description | Input/Action | Expected Outcome | Actual Outcome / Status |
+| :----------------------------------------------------- | :------------------------------------------------- | :------------------------------------------------------------------------------------ | :---------------------- |
+| **Mobile View (e.g., 375px width)** | Resize browser window to mobile dimensions | Recipe cards stack vertically; input field and button adjust size; no horizontal scrolling. | Passed |
+| **Desktop View (e.g., 1200px width)** | View on a desktop screen | Layout is well-structured and utilizes screen space effectively; horizontal scrolling for recipes. | Passed |
+
+---
+
+**Screenshots:**
+
+Screenshots demonstrating the application's functionality, responsiveness, and various states (e.g., initial load, search results, mobile view, expanded ingredient list) are located in the `screenshots/` directory within this repository.
